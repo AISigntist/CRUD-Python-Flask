@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog List - Python Flask</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <style>
+        .blog-card {
+            transition: transform 0.2s, box-shadow 0.2s;
+            margin-bottom: 2rem;
+            border: none;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .blog-category {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .blog-date {
+            color: #6c757d;
+            font-size: 0.9rem;
+        }
+
+        .blog-author {
+            color: #495057;
+            font-weight: 500;
+        }
+    </style>
+</head>
+
+<body class="bg-dark bg-gradient">
+    <div class="container-fluid shadow-sm bg-dark bg-gradient">
+        <header class="d-flex flex-wrap justify-content-center py-3 mb-4"> <a href="/"
+                class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+                <h1>
+                    <i class="bi bi-journal-text"></i> Flask Blog 
+                </h1>
+                <ul class="nav nav-pills">
+                    <li class="nav-item"><a href="#" class="btn btn-warning" aria-current="page">Home</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+                </ul>
+        </header>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h2 class="mb-4">
+                    <i class="bi bi-list-ul"></i> All Posts
+                    <span class="badge bg-warning ms-2">10</span>
+                </h2>
+            </div>
+        </div>
+    </div>
+    <div class="d-flex container">
+        <main class="p-4 shadow rounded border flex-grow-1">
+            <div class="row">
+
+                <div class="col-md-6 col-lg-6 mb-4">
+                    <div class="card blog-card h-100 border">
+                        <div class="card-header">
+                            <h5 class="card-title">Getting Started with Python Flask</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <span class="badge bg-secondary blog-category">Python</span>
+                                <span class="blog-date">
+                                    <i class="bi bi-calendar3"></i> 2024-01-15
+                                </span>
+                            </div>
+
+                            <p class="card-text text-muted">Learn the basics of Flask and how to build your first web
+                                application with this powerful Python framework.</p>
+                            <div class="mt-auto">
+                                <p class="blog-author mb-0">
+                                    <i class="bi bi-person"></i> John Doe
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-white border-top-0 d-flex justify-content-end">
+                            <a href="#" class="btn btn-warning btn-sm">
+                                Read More <i class="bi bi-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-6 mb-4">
+                    <div class="card blog-card h-100 border">
+                        <div class="card-header">
+                            <h5 class="card-title">Understanding RESTful APIs</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <span class="badge bg-secondary blog-category">Web Development</span>
+                                <span class="blog-date">
+                                    <i class="bi bi-calendar3"></i> 2024-01-20
+                                </span>
+                            </div>
+
+                            <p class="card-text text-muted">A comprehensive guide to designing and implementing RESTful
+                                APIs that follow best practices and conventions.</p>
+                            <div class="mt-auto">
+                                <p class="blog-author mb-0">
+                                    <i class="bi bi-person"></i> Jane Smith
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-white border-top-0 d-flex justify-content-end">
+                            <a href="#" class="btn btn-warning btn-sm">
+                                Read More <i class="bi bi-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-6 mb-4">
+                    <div class="card blog-card h-100 border">
+                        <div class="card-header">
+                            <h5 class="card-title">Database Design Best Practices</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <span class="badge bg-secondary blog-category">Database</span>
+                                <span class="blog-date">
+                                    <i class="bi bi-calendar3"></i> 2024-01-25
+                                </span>
+                            </div>
+
+                            <p class="card-text text-muted">Explore essential principles for designing efficient and
+                                scalable database schemas for your applications.</p>
+                            <div class="mt-auto">
+                                <p class="blog-author mb-0">
+                                    <i class="bi bi-person"></i> Mike Johnson
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-white border-top-0 d-flex justify-content-end">
+                            <a href="#" class="btn btn-warning btn-sm">
+                                Read More <i class="bi bi-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-6 mb-4">
+                    <div class="card blog-card h-100 border">
+                        <div class="card-header">
+                            <h5 class="card-title">Modern JavaScript ES6+ Features</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <span class="badge bg-secondary blog-category">JavaScript</span>
+                                <span class="blog-date">
+                                    <i class="bi bi-calendar3"></i> 2024-02-01
+                                </span>
+                            </div>
+
+                            <p class="card-text text-muted">Discover the powerful features introduced in ES6 and later
+                                versions that make JavaScript development more enjoyable.</p>
+                            <div class="mt-auto">
+                                <p class="blog-author mb-0">
+                                    <i class="bi bi-person"></i> Sarah Williams
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-white border-top-0 d-flex justify-content-end">
+                            <a href="#" class="btn btn-warning btn-sm">
+                                Read More <i class="bi bi-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-6 mb-4">
+                    <div class="card blog-card h-100 border">
+                        <div class="card-header">
+                            <h5 class="card-title">Docker Containerization Guide</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <span class="badge bg-secondary blog-category">DevOps</span>
+                                <span class="blog-date">
+                                    <i class="bi bi-calendar3"></i> 2024-02-05
+                                </span>
+                            </div>
+
+                            <p class="card-text text-muted">Learn how to containerize your applications with Docker and
+                                deploy them efficiently across different environments.</p>
+                            <div class="mt-auto">
+                                <p class="blog-author mb-0">
+                                    <i class="bi bi-person"></i> David Brown
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-white border-top-0 d-flex justify-content-end">
+                            <a href="#" class="btn btn-warning btn-sm">
+                                Read More <i class="bi bi-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-6 mb-4">
+                    <div class="card blog-card h-100 border">
+                        <div class="card-header">
+                            <h5 class="card-title">Building Responsive Web Designs</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <span class="badge bg-secondary blog-category">Web Design</span>
+                                <span class="blog-date">
+                                    <i class="bi bi-calendar3"></i> 2024-02-10
+                                </span>
+                            </div>
+
+                            <p class="card-text text-muted">Master the art of creating websites that look great on all
+                                devices using modern CSS techniques and frameworks.</p>
+                            <div class="mt-auto">
+                                <p class="blog-author mb-0">
+                                    <i class="bi bi-person"></i> Emily Davis
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-white border-top-0 d-flex justify-content-end">
+                            <a href="#" class="btn btn-warning btn-sm">
+                                Read More <i class="bi bi-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-6 mb-4">
+                    <div class="card blog-card h-100 border">
+                        <div class="card-header">
+                            <h5 class="card-title">Introduction to Machine Learning</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <span class="badge bg-secondary blog-category">Machine Learning</span>
+                                <span class="blog-date">
+                                    <i class="bi bi-calendar3"></i> 2024-02-15
+                                </span>
+                            </div>
+
+                            <p class="card-text text-muted">Start your journey into machine learning with this
+                                beginner-friendly introduction to key concepts and algorithms.</p>
+                            <div class="mt-auto">
+                                <p class="blog-author mb-0">
+                                    <i class="bi bi-person"></i> Robert Taylor
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-white border-top-0 d-flex justify-content-end">
+                            <a href="#" class="btn btn-warning btn-sm">
+                                Read More <i class="bi bi-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-6 mb-4">
+                    <div class="card blog-card h-100 border">
+                        <div class="card-header">
+                            <h5 class="card-title">Git Workflow Strategies</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <span class="badge bg-secondary blog-category">Version Control</span>
+                                <span class="blog-date">
+                                    <i class="bi bi-calendar3"></i> 2024-02-20
+                                </span>
+                            </div>
+
+                            <p class="card-text text-muted">Explore different Git workflow strategies that can help your
+                                team collaborate more effectively on software projects.</p>
+                            <div class="mt-auto">
+                                <p class="blog-author mb-0">
+                                    <i class="bi bi-person"></i> Lisa Anderson
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-white border-top-0 d-flex justify-content-end">
+                            <a href="#" class="btn btn-warning btn-sm">
+                                Read More <i class="bi bi-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-6 mb-4">
+                    <div class="card blog-card h-100 border">
+                        <div class="card-header">
+                            <h5 class="card-title">Cloud Computing Fundamentals</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <span class="badge bg-secondary blog-category">Cloud</span>
+                                <span class="blog-date">
+                                    <i class="bi bi-calendar3"></i> 2024-02-25
+                                </span>
+                            </div>
+
+                            <p class="card-text text-muted">Understand the core concepts of cloud computing and how to
+                                leverage cloud services for your applications.</p>
+                            <div class="mt-auto">
+                                <p class="blog-author mb-0">
+                                    <i class="bi bi-person"></i> Chris Martinez
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-white border-top-0 d-flex justify-content-end">
+                            <a href="#" class="btn btn-warning btn-sm">
+                                Read More <i class="bi bi-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-6 mb-4">
+                    <div class="card blog-card h-100 border">
+                        <div class="card-header">
+                            <h5 class="card-title">Security Best Practices for Web Apps</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <span class="badge bg-secondary blog-category">Security</span>
+                                <span class="blog-date">
+                                    <i class="bi bi-calendar3"></i> 2024-03-01
+                                </span>
+                            </div>
+
+                            <p class="card-text text-muted">Learn essential security practices to protect your web
+                                applications from common vulnerabilities and attacks.</p>
+                            <div class="mt-auto">
+                                <p class="blog-author mb-0">
+                                    <i class="bi bi-person"></i> Jennifer Lee
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-white border-top-0 d-flex justify-content-end">
+                            <a href="#" class="btn btn-warning btn-sm">
+                                Read More <i class="bi bi-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+        <div class="mx-4 w-25 flex-shrink-0">
+            <div class="p-4 shadow rounded border">
+                <div class="card border">
+                    <div class="card-header">
+                        <h5 class="card-title">Categories</h5>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <a href="#">Python</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="#">Flask</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="#">Django</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="#">JavaScript</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="#">React</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card border mt-4">
+                    <div class="card-header">
+                        <h5 class="card-title">Search</h5>
+                    </div>
+                    <div class="card-body">
+                        <input type="text" class="form-control" placeholder="Search">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Footer -->
+    <footer class="mt-5 py-4 bg-light">
+        <div class="container text-center">
+            <p class="text-muted mb-0">
+                &copy; 2024 Blog. Built with Flask and Bootstrap.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

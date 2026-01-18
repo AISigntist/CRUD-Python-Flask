@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog List - Python Flask</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <style>
+        .blog-card {
+            transition: transform 0.2s, box-shadow 0.2s;
+            margin-bottom: 2rem;
+            border: none;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .blog-category {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .blog-date {
+            color: #6c757d;
+            font-size: 0.9rem;
+        }
+
+        .blog-author {
+            color: #495057;
+            font-weight: 500;
+        }
+    </style>
+</head>
+
+<body class="bg-dark bg-gradient">
+    <div class="container-fluid shadow-sm bg-dark bg-gradient">
+        <header class="d-flex flex-wrap justify-content-center py-3 mb-4"> <a href="/"
+                class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+                <h1>
+                    <i class="bi bi-journal-text"></i> Flask Blog
+                </h1>
+                <ul class="nav nav-pills">
+                    <li class="nav-item"><a href="#" class="btn btn-warning" aria-current="page">Home</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+                </ul>
+        </header>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h2 class="mb-4">
+                    <i class="bi bi-list-ul"></i> All Posts
+                    <span class="badge bg-warning ms-2">{{ blogs|length }}</span>
+                </h2>
+            </div>
+        </div>
+    </div>
+    <div class="d-flex container">
+        <main class="p-4 shadow rounded border flex-grow-1">
+            <div class="row">
+                {% for blog in blogs %}
+                <div class="col-md-6 col-lg-6 mb-4">
+                    <div class="card blog-card h-100 border">
+                        <div class="card-header">
+                            <h5 class="card-title">{{ blog.title }}</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <span class="badge bg-secondary blog-category">{{ blog.category }}</span>
+                                <span class="blog-date">
+                                    <i class="bi bi-calendar3"></i> {{ blog.date }}
+                                </span>
+                            </div>
+            
+                            <p class="card-text text-muted">{{ blog.excerpt }}</p>
+                            <div class="mt-auto">
+                                <p class="blog-author mb-0">
+                                    <i class="bi bi-person"></i> {{ blog.author }}
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-white border-top-0 d-flex justify-content-end">
+                            <a href="#" class="btn btn-warning btn-sm">
+                                Read More <i class="bi bi-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </main>
+        <div class="mx-4 w-25 flex-shrink-0">
+            <div class="p-4 shadow rounded border">
+                <div class="card border">
+                    <div class="card-header">
+                        <h5 class="card-title">Categories</h5>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <a href="#">Python</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="#">Flask</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="#">Django</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="#">JavaScript</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="#">React</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card border mt-4">
+                    <div class="card-header">
+                        <h5 class="card-title">Search</h5>
+                    </div>
+                    <div class="card-body">
+                        <input type="text" class="form-control" placeholder="Search">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <!-- Footer -->
+    <footer class="mt-5 py-4 bg-light">
+        <div class="container text-center">
+            <p class="text-muted mb-0">
+                &copy; 2024 Blog. Built with Flask and Bootstrap.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

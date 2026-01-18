@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h1>Add Post</h1>
+<form method="post" action="{{ url_for('add_post') }}">
+    <div class="mb-3">
+        <label class="form-label" for="title">Title</label>
+        <input type="text" name="title" class="form-control" required>
+    </div>
+    <div class="mb-3">
+        <label class="form-label" for="excerpt">Excerpt</label>
+        <textarea name="excerpt" class="form-control" rows="2" required></textarea>
+    </div>
+    <div class="mb-3">
+        <label class="form-label" for="category">Category</label>
+        <select name="category" class="form-control" required>
+            <option value="Python">Python</option>
+            <option value="Flask">Flask</option>
+            <option value="Django">Django</option>
+            <option value="JavaScript">JavaScript</option>
+            <option value="React">React</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <label class="form-label" for="author">Author</label>
+        <input type="text" name="author" class="form-control" required>
+    </div>
+    <div class="mb-3">
+        <label class="form-label" for="date">Date</label>
+        <input type="date" name="date" class="form-control" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Add Post</button>
+</form>
+{% endblock %}
